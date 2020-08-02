@@ -8,8 +8,7 @@
             <field name="interval_type">days</field>
             <field name="numbercall">-1</field>
             <field name="doall">1</field>
-            <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d 16:01:00')" />
-            <!-- <field name="nextcall" eval="(datetime.utcnow() + timedelta(days=0)).strftime('%Y-%m-%d 00:01:00')" /> -->
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=0)).strftime('%Y-%m-%d 16:01:00')" />
             <field name="model" eval="'account.invoice'"/>
             <field name="function" eval="'_cron_check_invoice'"/>
             <field name="args" eval="'()'"/>

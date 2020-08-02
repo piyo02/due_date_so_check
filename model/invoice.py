@@ -1,5 +1,5 @@
 from odoo import api, fields, models, _
-from datetime import date
+from datetime import date, timedelta
 import logging
 
 _logger = logging.getLogger(__name__)
@@ -17,5 +17,10 @@ class CheckInvoices(models.Model):
 
         for invoice in invoices:
             partner = invoice.partner_id
-            partner.sale_warn = 'block'
+            
+            due_date_customer = partner.due_date_customer
+            due_date = invoice.date_due + timedelta(days=due_date_customer)
+
+            if due_date < today:
+                partner.sale_warn = 'block'
         

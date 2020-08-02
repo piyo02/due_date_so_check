@@ -8,7 +8,8 @@
                    ,
     'depends': ['base', 'account'],
     'data': [
-        'data/cron.xml'
+        'data/cron.xml',
+        'view/customer.xml'
     ],
     'images': [''],
     'auto_install': False,

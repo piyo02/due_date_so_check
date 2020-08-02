@@ -23,4 +23,5 @@ class CheckInvoices(models.Model):
 
             if due_date < today:
                 partner.sale_warn = 'block'
+                partner.sale_warn_msg = 'Ada tagihan jatuh tempo'
         
